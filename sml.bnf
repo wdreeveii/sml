@@ -1,0 +1,10 @@
+list = { expression }
+
+expression = term {("-") term} .
+
+term = factor {("&&"|"||") factor} .
+
+factor =
+    ident { number } [("@") { number }]
+    | "(" expression ")" .
+
